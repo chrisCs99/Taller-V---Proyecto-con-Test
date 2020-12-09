@@ -1,5 +1,5 @@
 # Taller-V---Proyecto-con-Test
-Proyecto Final de taller V aplicando unit test, integration test, automation test
+Proyecto Final de taller V aplicando unit test, regresion test, automation test
 
 - Para ejecutar los diferentes tipos de test, se debe de hacer los siguientes pasos:
     - Para ejecutar los automation test, se debe de tener descargado proyecto_final_frontend y proyecto_final_backend
@@ -10,6 +10,6 @@ Proyecto Final de taller V aplicando unit test, integration test, automation tes
     - Para ejecutar los unit test, se debe de tener instalado todos los paquetes del requirements.txt
     - Una vez instalados ir a outime -> test.py y ejecutar los unit test desde alli
 
-    - Para ver los integration test, se debe de abrir el excel "Integration Test - Proyecto Final" 
+    - Para ver los regresion test, se debe de abrir el excel "Regresion Test - Proyecto Final" 
     - Asi como tener ejecutando backend y frontend al mismo tiempo para ir probando los casos de prueba
     - Realizados en el excel
