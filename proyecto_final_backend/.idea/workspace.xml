@@ -1,0 +1,436 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="ec6e81d6-536f-4094-be9f-2091d51f840b" name="Default Changelist" comment="" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="DatabaseView">
+    <option name="SHOW_INTERMEDIATE" value="true" />
+    <option name="GROUP_DATA_SOURCES" value="true" />
+    <option name="GROUP_SCHEMA" value="true" />
+    <option name="GROUP_CONTENTS" value="false" />
+    <option name="SORT_POSITIONED" value="false" />
+    <option name="SHOW_EMPTY_GROUPS" value="false" />
+    <option name="AUTO_SCROLL_FROM_SOURCE" value="false" />
+    <option name="HIDDEN_KINDS">
+      <set />
+    </option>
+    <expand>
+      <path>
+        <item name="Database" type="3277223f:DatabaseStructure$DbRootGroup" />
+        <item name="db" type="feb32156:DbDataSourceImpl" />
+      </path>
+      <path>
+        <item name="Database" type="3277223f:DatabaseStructure$DbRootGroup" />
+        <item name="db" type="feb32156:DbDataSourceImpl" />
+        <item name="schemas" type="d4e8921:DatabaseStructure$FamilyGroup" />
+      </path>
+      <path>
+        <item name="Database" type="3277223f:DatabaseStructure$DbRootGroup" />
+        <item name="db" type="feb32156:DbDataSourceImpl" />
+        <item name="schemas" type="d4e8921:DatabaseStructure$FamilyGroup" />
+        <item name="main: schema" type="981a47c2:SqliteImplModel$Schema" />
+      </path>
+    </expand>
+    <select />
+  </component>
+  <component name="DjangoConsoleOptions" custom-start-script="import sys; print('Python %s on %s' % (sys.version, sys.platform))&#10;import django; print('Django %s' % django.get_version())&#10;sys.path.extend([WORKING_DIR_AND_PYTHON_PATHS])&#10;if 'setup' in dir(django): django.setup()&#10;import django_manage_shell; django_manage_shell.run(PROJECT_ROOT)">
+    <option name="myCustomStartScript" value="import sys; print('Python %s on %s' % (sys.version, sys.platform))&#10;import django; print('Django %s' % django.get_version())&#10;sys.path.extend([WORKING_DIR_AND_PYTHON_PATHS])&#10;if 'setup' in dir(django): django.setup()&#10;import django_manage_shell; django_manage_shell.run(PROJECT_ROOT)" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Python Script" />
+      </list>
+    </option>
+  </component>
+  <component name="ProjectId" id="1dkEAsH6CUF1URTdUHbIVNa34Q1" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showExcludedFiles" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="node.js.detected.package.eslint" value="true" />
+    <property name="node.js.detected.package.tslint" value="true" />
+    <property name="node.js.path.for.package.eslint" value="project" />
+    <property name="node.js.path.for.package.tslint" value="project" />
+    <property name="node.js.selected.package.eslint" value="(autodetect)" />
+    <property name="node.js.selected.package.tslint" value="(autodetect)" />
+    <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
+  </component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="E:\NUR\SEMESTRE I - 2020\web3\proyecto_final\templates\outime" />
+    </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="E:\NUR\SEMESTRE II - 2020\TALLER ACT. 5\proyecto_final" />
+      <recent name="E:\NUR\SEMESTRE II - 2020\TALLER ACT. 5\proyecto_final\utilities" />
+      <recent name="E:\NUR\SEMESTRE I - 2020\web3\proyecto_final\templates\registration" />
+      <recent name="E:\NUR\SEMESTRE I - 2020\web3\proyecto_final\outime\forms" />
+      <recent name="E:\NUR\SEMESTRE I - 2020\web3\proyecto_final\outime\templates" />
+    </key>
+  </component>
+  <component name="RunManager" selected="Django server.proyecto_final">
+    <configuration name="Test: outime.tests.TestCategoria" type="DjangoTestsConfigurationType" temporary="true">
+      <module name="proyecto_final" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="TARGET" value="outime.tests.TestCategoria" />
+      <option name="SETTINGS_FILE" value="" />
+      <option name="CUSTOM_SETTINGS" value="false" />
+      <option name="USE_OPTIONS" value="false" />
+      <option name="OPTIONS" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="Test: outime.tests.TestUser" type="DjangoTestsConfigurationType" temporary="true">
+      <module name="proyecto_final" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="TARGET" value="outime.tests.TestUser" />
+      <option name="SETTINGS_FILE" value="" />
+      <option name="CUSTOM_SETTINGS" value="false" />
+      <option name="USE_OPTIONS" value="false" />
+      <option name="OPTIONS" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="Test: outime.tests:TestVenta" type="DjangoTestsConfigurationType" temporary="true">
+      <module name="proyecto_final" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="TARGET" value="outime.tests:TestVenta" />
+      <option name="SETTINGS_FILE" value="" />
+      <option name="CUSTOM_SETTINGS" value="false" />
+      <option name="USE_OPTIONS" value="false" />
+      <option name="OPTIONS" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="Test: outime.tests.TestVenta" type="DjangoTestsConfigurationType" temporary="true">
+      <module name="proyecto_final" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="TARGET" value="outime.tests.TestVenta" />
+      <option name="SETTINGS_FILE" value="" />
+      <option name="CUSTOM_SETTINGS" value="false" />
+      <option name="USE_OPTIONS" value="false" />
+      <option name="OPTIONS" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="Test: outime.tests:TestVenta.test_crearVenta" type="DjangoTestsConfigurationType" temporary="true">
+      <module name="proyecto_final" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="TARGET" value="outime.tests:TestVenta.test_crearVenta" />
+      <option name="SETTINGS_FILE" value="" />
+      <option name="CUSTOM_SETTINGS" value="false" />
+      <option name="USE_OPTIONS" value="false" />
+      <option name="OPTIONS" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="proyecto_final" type="Python.DjangoServer" factoryName="Django server">
+      <module name="proyecto_final" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+        <env name="DJANGO_SETTINGS_MODULE" value="proyecto_final.settings" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="" />
+      <option name="IS_MODULE_SDK" value="false" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="launchJavascriptDebuger" value="false" />
+      <option name="port" value="8000" />
+      <option name="host" value="" />
+      <option name="additionalOptions" value="" />
+      <option name="browserUrl" value="" />
+      <option name="runTestServer" value="false" />
+      <option name="runNoReload" value="false" />
+      <option name="useCustomRunCommand" value="false" />
+      <option name="customRunCommand" value="" />
+      <method v="2" />
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Django tests.Test: outime.tests:TestVenta.test_crearVenta" />
+        <item itemvalue="Django tests.Test: outime.tests:TestVenta" />
+        <item itemvalue="Django tests.Test: outime.tests.TestCategoria" />
+        <item itemvalue="Django tests.Test: outime.tests.TestUser" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="ec6e81d6-536f-4094-be9f-2091d51f840b" name="Default Changelist" comment="" />
+      <created>1592960550468</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1592960550468</updated>
+      <workItem from="1592960597653" duration="4608000" />
+      <workItem from="1593438548761" duration="1273000" />
+      <workItem from="1593449909722" duration="5518000" />
+      <workItem from="1593479703721" duration="1217000" />
+      <workItem from="1593528372424" duration="1956000" />
+      <workItem from="1594144276456" duration="493000" />
+      <workItem from="1594158165827" duration="630000" />
+      <workItem from="1594168045950" duration="1433000" />
+      <workItem from="1594215347936" duration="5236000" />
+      <workItem from="1594240429213" duration="3742000" />
+      <workItem from="1594393406598" duration="1771000" />
+      <workItem from="1594407663506" duration="11886000" />
+      <workItem from="1594478315210" duration="15587000" />
+      <workItem from="1594508489190" duration="102000" />
+      <workItem from="1594508810324" duration="808000" />
+      <workItem from="1594509630536" duration="1275000" />
+      <workItem from="1594512188239" duration="8923000" />
+      <workItem from="1594560197102" duration="16945000" />
+      <workItem from="1594645026715" duration="38766000" />
+      <workItem from="1594732597358" duration="811000" />
+      <workItem from="1594734562368" duration="1193000" />
+      <workItem from="1594744613822" duration="4224000" />
+      <workItem from="1594755551880" duration="55000" />
+      <workItem from="1595077870199" duration="1060000" />
+      <workItem from="1595631921610" duration="3296000" />
+      <workItem from="1597165613297" duration="488000" />
+      <workItem from="1597166441881" duration="31000" />
+      <workItem from="1597166490410" duration="48000" />
+      <workItem from="1597166555842" duration="205000" />
+      <workItem from="1606057401461" duration="3143000" />
+      <workItem from="1606069975805" duration="5121000" />
+      <workItem from="1606077170256" duration="12830000" />
+      <workItem from="1606130653059" duration="34000" />
+      <workItem from="1606271007567" duration="782000" />
+      <workItem from="1606957349729" duration="2538000" />
+      <workItem from="1606964838541" duration="32000" />
+      <workItem from="1607223099252" duration="225000" />
+      <workItem from="1607263143282" duration="17074000" />
+      <workItem from="1607380848624" duration="11490000" />
+      <workItem from="1607445516318" duration="1856000" />
+      <workItem from="1607473151460" duration="361000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="1" />
+  </component>
+  <component name="WindowStateProjectService">
+    <state width="755" height="466" key="DebuggerActiveHint" timestamp="1607389960228">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state width="755" height="466" key="DebuggerActiveHint/0.0.1920.1040@0.0.1920.1040" timestamp="1607389960228" />
+    <state width="1877" height="277" key="GridCell.Tab.0.bottom" timestamp="1607472802878">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state width="1877" height="277" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1607472802878" />
+    <state width="1877" height="277" key="GridCell.Tab.0.center" timestamp="1607472802878">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state width="1877" height="277" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1607472802878" />
+    <state width="1877" height="277" key="GridCell.Tab.0.left" timestamp="1607472802878">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state width="1877" height="277" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1607472802878" />
+    <state width="1877" height="277" key="GridCell.Tab.0.right" timestamp="1607472802878">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state width="1877" height="277" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1607472802878" />
+    <state width="1877" height="347" key="GridCell.Tab.1.bottom" timestamp="1607392452403">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state width="1877" height="347" key="GridCell.Tab.1.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1607392452403" />
+    <state width="1877" height="347" key="GridCell.Tab.1.center" timestamp="1607392452403">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state width="1877" height="347" key="GridCell.Tab.1.center/0.0.1920.1040@0.0.1920.1040" timestamp="1607392452403" />
+    <state width="1877" height="347" key="GridCell.Tab.1.left" timestamp="1607392452403">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state width="1877" height="347" key="GridCell.Tab.1.left/0.0.1920.1040@0.0.1920.1040" timestamp="1607392452403" />
+    <state width="1877" height="347" key="GridCell.Tab.1.right" timestamp="1607392452403">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state width="1877" height="347" key="GridCell.Tab.1.right/0.0.1920.1040@0.0.1920.1040" timestamp="1607392452403" />
+    <state x="656" y="344" key="com.intellij.ide.util.TipDialog" timestamp="1607473151520">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="656" y="344" key="com.intellij.ide.util.TipDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1607473151520" />
+    <state x="623" y="225" key="search.everywhere.popup" timestamp="1606061140820">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="623" y="225" key="search.everywhere.popup/0.0.1920.1040@0.0.1920.1040" timestamp="1606061140820" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/outime/models/ventas.py</url>
+          <line>41</line>
+          <option name="timeStamp" value="21" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/outime/repositories/extras.py</url>
+          <line>10</line>
+          <option name="timeStamp" value="25" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/outime/repositories/extras.py</url>
+          <line>64</line>
+          <option name="timeStamp" value="26" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/outime/api/compra_viewset.py</url>
+          <line>72</line>
+          <option name="timeStamp" value="27" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/outime/api/compra_viewset.py</url>
+          <line>79</line>
+          <option name="timeStamp" value="28" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/outime/api/compra_viewset.py</url>
+          <line>125</line>
+          <option name="timeStamp" value="29" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/outime/models/pagos.py</url>
+          <line>34</line>
+          <option name="timeStamp" value="32" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/outime/views/venta_view.py</url>
+          <line>74</line>
+          <option name="timeStamp" value="33" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/outime/views/venta_view.py</url>
+          <line>64</line>
+          <option name="timeStamp" value="34" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/outime/views/venta_view.py</url>
+          <line>54</line>
+          <option name="timeStamp" value="35" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/outime/views/venta_view.py</url>
+          <line>44</line>
+          <option name="timeStamp" value="36" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/outime/views/venta_view.py</url>
+          <line>76</line>
+          <option name="timeStamp" value="41" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/outime/models/ventas.py</url>
+          <line>56</line>
+          <option name="timeStamp" value="42" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/outime/models/pagos.py</url>
+          <line>38</line>
+          <option name="timeStamp" value="44" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/outime/api/compra_viewset.py</url>
+          <line>58</line>
+          <option name="timeStamp" value="46" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/outime/api/compra_viewset.py</url>
+          <option name="timeStamp" value="48" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/outime/models/pagos.py</url>
+          <line>24</line>
+          <option name="timeStamp" value="56" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/outime/repositories/extras.py</url>
+          <line>39</line>
+          <option name="timeStamp" value="57" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
+  </component>
+  <component name="com.intellij.coverage.CoverageDataManagerImpl">
+    <SUITE FILE_PATH="coverage/proyecto_final$Test__outime_tests_TestVenta.coverage" NAME="Test: outime.tests.TestVenta Coverage Results" MODIFIED="1607447827908" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="" />
+    <SUITE FILE_PATH="coverage/proyecto_final$Test__outime_tests_TestVenta_test_pago_aceptado.coverage" NAME="Test: outime.tests.TestVenta.test_pago_aceptado Coverage Results" MODIFIED="1607390820555" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="" />
+    <SUITE FILE_PATH="coverage/proyecto_final$Unittests_for_test_skynet_SkyNet_test_login.coverage" NAME="Unittests for test_skynet.SkyNet.test_login Coverage Results" MODIFIED="1607263891556" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/proyecto_final$Unittests_for_test_skynet_SkyNet_test_cart_buy.coverage" NAME="Unittests for test_skynet.SkyNet.test_cart_buy Coverage Results" MODIFIED="1607280816587" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/proyecto_final$Test__outime_tests_TestVenta_test_pago_anulado.coverage" NAME="Test: outime.tests.TestVenta.test_pago_anulado Coverage Results" MODIFIED="1607392162333" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="" />
+    <SUITE FILE_PATH="coverage/proyecto_final$Test__outime_tests_TestUser.coverage" NAME="Test: outime.tests.TestUser Coverage Results" MODIFIED="1607447354448" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="" />
+    <SUITE FILE_PATH="coverage/proyecto_final$Test__outime_tests_TestVenta_test_comprobante_enviado.coverage" NAME="Test: outime.tests.TestVenta.test_comprobante_enviado Coverage Results" MODIFIED="1607390097008" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="" />
+    <SUITE FILE_PATH="coverage/proyecto_final$Unittests_for_test_skynet_SkyNet.coverage" NAME="Unittests for test_skynet.SkyNet Coverage Results" MODIFIED="1607446985988" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/proyecto_final$Unittests_for_test_skynet_SkyNet_test_clean_product_to_cart.coverage" NAME="Unittests for test_skynet.SkyNet.test_clean_product_to_cart Coverage Results" MODIFIED="1607263416496" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/proyecto_final$Test__outime_tests_TestUser_test_insert_user.coverage" NAME="Test: outime.tests.TestUser.test_insert_user Coverage Results" MODIFIED="1607381119723" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="" />
+    <SUITE FILE_PATH="coverage/proyecto_final$Unittests_for_test_skynet_SkyNet_test_add_product_to_cart.coverage" NAME="Unittests for test_skynet.SkyNet.test_add_product_to_cart Coverage Results" MODIFIED="1606080206327" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/proyecto_final$Unittests_for_test_skynet_SkyNet_test_add_differents_products.coverage" NAME="Unittests for test_skynet.SkyNet.test_add_differents_products Coverage Results" MODIFIED="1607265869471" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/proyecto_final$Unittests_for_test_skynet_SkyNet_test_buy_process.coverage" NAME="Unittests for test_skynet.SkyNet.test_buy_process Coverage Results" MODIFIED="1607281179954" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/proyecto_final$Test__outime_tests_TestVenta_test_cambiarEstadoVenta.coverage" NAME="Test: outime.tests.TestVenta.test_cambiarEstadoVenta Coverage Results" MODIFIED="1607387836886" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="" />
+    <SUITE FILE_PATH="coverage/proyecto_final$Unittests_for_test_skynet_SkyNet_test_buy_product.coverage" NAME="Unittests for test_skynet.SkyNet.test_buy_product Coverage Results" MODIFIED="1607266329740" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/proyecto_final$Test__outime_tests_TestVenta_test_crearVenta.coverage" NAME="Test: outime.tests:TestVenta.test_crearVenta Coverage Results" MODIFIED="1607447704010" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="" />
+    <SUITE FILE_PATH="coverage/proyecto_final$Unittests_for_test_skynet_SkyNet_test_view_history.coverage" NAME="Unittests for test_skynet.SkyNet.test_view_history Coverage Results" MODIFIED="1607279475908" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/proyecto_final$Test__outime_tests_TestVenta_test_crear_entrega_y_pago.coverage" NAME="Test: outime.tests.TestVenta.test_crear_entrega_y_pago Coverage Results" MODIFIED="1607388282488" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="" />
+    <SUITE FILE_PATH="coverage/proyecto_final$Unittests_for_test_skynet_SkyNet_test_register_user.coverage" NAME="Unittests for test_skynet.SkyNet.test_register_user Coverage Results" MODIFIED="1607264127442" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/proyecto_final$Test__outime_tests_TestProducto_test_CrearProducto.coverage" NAME="Test: outime.tests.TestProducto.test_CrearProducto Coverage Results" MODIFIED="1607385901932" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="" />
+    <SUITE FILE_PATH="coverage/proyecto_final$Unittests_for_test_skynet_SkyNet_test_logout.coverage" NAME="Unittests for test_skynet.SkyNet.test_logout Coverage Results" MODIFIED="1607280705252" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/proyecto_final$Test__outime_tests_TestCategoria.coverage" NAME="Test: outime.tests.TestCategoria Coverage Results" MODIFIED="1607447364372" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="" />
+  </component>
+</project>

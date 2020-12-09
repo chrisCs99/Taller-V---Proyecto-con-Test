@@ -1,0 +1,441 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="bootstrap/css/bootstrap.css" rel="stylesheet">
+    <script src="js/jquery-3.4.1.min.js"></script>
+    <script src="js/popper.min.js"></script>
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css" integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/" crossorigin="anonymous">
+    
+    <link rel="stylesheet" href="css/sweetalert2.min.css">
+    <title>SkyNet</title>
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo01" aria-controls="navbarTogglerDemo01" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarTogglerDemo01">
+          <a class="navbar-brand" href="index.html">SkyNet</a>
+          <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
+            <li class="nav-item active">
+              <a class="nav-link" href="index.html">Home <span class="sr-only">(current)</span></a>
+            </li>
+            <li class="nav-item active" id="valorCuenta">
+              <a class="nav-link" href="perfil.html" >Cuenta <span class="sr-only">(current)</span></a>
+            </li>
+            <li class="nav-item active">
+                <a class="nav-link" href="historial.html">Historial de Compras <span class="sr-only">(current)</span></a>
+              </li>
+            <li class="nav-item active">
+              <a class="nav-link" href="#" id="cambiarValor">Desconectarse <span class="sr-only">(current)</span></a>
+            </li>
+            <li>
+              <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse"
+                        aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+                    <div class="collapse navbar-collapse" id="navbarCollapse">
+                        <ul class="navbar-nav mr-auto">
+                            <li class="nav-item dropdown">
+                                <img src="img/cart.jpeg" class="nav-link dropdown-toggle img-fluid" height="40px"
+                                    width="40px" href="#" id="dropdown01" data-toggle="dropdown" aria-haspopup="true"
+                                    aria-expanded="false"></img>
+                                <div id="carrito" class="dropdown-menu" aria-labelledby="navbarCollapse">
+                                    <table id="lista-carrito" class="table">
+                                        <thead>
+                                            <tr>
+                                                <th>Imagen</th>
+                                                <th>Nombre</th>
+                                                <th>Precio</th>
+                                                <th>Cantidad</th>
+                                                <th></th>
+                                            </tr>
+                                        </thead>
+                                        <tbody></tbody>
+                                    </table>
+
+                                    <a href="#" id="vaciar-carrito" class="btn btn-primary btn-block">Vaciar Carrito</a>
+                                    <a href="#" id="procesar-pedido" class="btn btn-danger btn-block">Procesar
+                                        Compra</a>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+            </li>
+          </ul>
+        </div>
+      </nav>
+      
+      <main>
+        <div class="container">
+            <div class="row mt-3">
+                <div class="col" id="app">
+                    <h2 class="d-flex justify-content-center mb-3">Detalle de Compra</h2>
+                    <!-- <form id="procesar-pago" action="#" method="post"> -->
+                    <div v-for="(info, index2) in informacion" :key="index2">
+                        <div class="form-group row">
+                            <label for="cliente" class="col-12 col-md-2 col-form-label h2">Cliente :</label>
+                            <div class="col-12 col-md-10">
+                                <input type="text" class="form-control" id="cliente" :value="info.id_venta.nombre_factura" disabled
+                                    placeholder="Ingresa nombre cliente para la factura" required name="destinatario">
+                            </div>
+                        </div>
+                        <div class="form-group row">
+                            <label for="email" class="col-12 col-md-2 col-form-label h2">Correo :</label>
+                            <div class="col-12 col-md-10">
+                                <input type="text" class="form-control" id="correo" required placeholder="Ingresa tu correo" disabled name="cc_to" :value="info.id_venta.usuario.email">
+                            </div>
+                        </div>
+                        <div class="form-group row">
+                            <label for="nit" class="col-12 col-md-2 col-form-label h2">NIT :</label>
+                            <div class="col-12 col-md-10">
+                                <input type="text" class="form-control" id="nitFactura" required placeholder="Ingresa el NIT" disabled :value="info.id_venta.nit">
+                            </div>
+                        </div>
+                        <div class="form-group row">
+                            <label class="col-12 col-md-2 col-form-label h2">Estado de la compra :</label>
+                            <div class="col-12 col-md-10">
+                                <input type="text" class="form-control" disabled v-if="info.id_venta.estado == 2" value="Pago Aceptado">
+                                <input type="text" class="form-control" disabled v-else-if="info.id_venta.estado == 3" value="Entregado">
+                                <input type="text" class="form-control" disabled v-else-if="info.id_venta.estado == 1" value="Esperando Aprobación del pago">
+                                <input type="text" class="form-control" disabled v-else-if="info.id_venta.estado == -1" value="Pago Rechazado">
+                                <input type="text" class="form-control" disabled v-else-if="info.id_venta.estado == -2" value="Pago Anulado">
+                                <input type="text" class="form-control" disabled v-else="info.id_venta.estado == 0" value="Requiere subir comprobante de pago">
+                            </div>
+                        </div>
+                        <div v-for="(info2, index21) in entrega" :key="index21">
+                            <div class="form-group row">
+                                <label for="direccion" class="col-12 col-md-2 col-form-label h2">Dirección de Entrega :</label>
+                                <div class="col-12 col-md-10">
+                                    <input type="text" class="form-control" id="dirEntrega" required placeholder="Ingresa la dirección de entrega" :value="info2.direccion_entrega" disabled>
+                                </div>
+                            </div>
+                            <div class="form-group row">
+                                <label for="latitud" class="col-12 col-md-2 col-form-label h2">Latitud :</label>
+                                <div class="col-12 col-md-10">
+                                    <input type="text" class="form-control" id="latEntrega" placeholder="Ingresa la latitud" disabled :value="info2.latitud">
+                                </div>
+                            </div>
+                            <div class="form-group row">
+                                <label for="longitud" class="col-12 col-md-2 col-form-label h2">Longitud :</label>
+                                <div class="col-12 col-md-10">
+                                    <input type="text" class="form-control" id="longEntrega" placeholder="Ingresa la longitud" disabled :value="info2.longitud">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                        <div class="form-group table-responsive" >
+                            <table class="table" id="lista-compra" >
+                                <thead>
+                                    <tr>
+                                        <!-- <th scope="col">Imagen</th> -->
+                                        <th scope="col">Nombre</th>
+                                        <th scope="col">Precio</th>
+                                        <th scope="col">Cantidad</th>
+                                        <th scope="col">Sub Total</th>
+                                    </tr>
+
+                                </thead>
+                                <tbody>
+                                    <tr v-for="(venta, index) in ventas" :key="index">
+                                        <!-- <td><img :src="venta.producto.imagen_producto"></td> -->
+                                        <td>{{venta.producto.nombre}}</td>
+                                        <td>{{venta.producto.precio}}</td>
+                                        <td>{{venta.cantidad_vendida}}</td>
+                                        <td>{{venta.precio_venta * venta.cantidad_vendida}}</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+
+
+                        <div class="form-group" id="ocultarSiN" v-for="(info, index23) in informacion" :key="index23">
+                            <form id="imgFile2" method="post" enctype="multipart/form-data" v-if="info.id_venta.estado == 0">
+                            <label class="col-12 col-md-2 col-form-label h2">Comprobante de pago :</label>
+                                <div class="col-12 col-md-10">
+                                    <input type="file" class="form-control" v-model='imgFile' id="imgFile">
+                                </div>
+                                <br>
+                            </form>
+                            <button class="btn btn-primary" @click="subirComprobante" v-if="info.id_venta.estado == 0">Enviar Comprobante</button>
+                        </div>
+
+
+                </div>
+
+
+            </div>
+
+        </div>
+    </main>
+
+<div class="card mb-4 shadow-sm" id="lista-producto" style="display: none;">
+  <div class="card-header">
+      <h4 class="my-0 font-weight-bold tituloNa" id="prodNames">f</h4>
+  </div>
+  <div class="card-body">
+      <img class="card-img-top" id="prodImage">
+      <h1 class="card-title pricing-card-title precio" id="prodPrecio">F</h1>
+      <h1 class="card-title pricing-card-title prodID" id="prodIDs">F</h1>
+
+      <button class="btn btn-block btn-primary agregar-carrito" id="btnCarritoAgregar" data-id="1">Comprar</button>
+  </div>
+    
+</body>
+
+<script src="js/axios.js"></script>
+<script src="js/vue.min.js"></script>
+<script src="js/bootstrap.min.js"></script>
+<script src="js/sweetalert2.min.js"></script>
+<script src="js/carrito.js"></script>
+<script src="js/pedido.js"></script>
+<script>
+
+$(document).ready(function(){
+  if(localStorage.getItem("usrSession") === null){
+    Swal.fire({
+                type: 'error',
+                title: 'Oops...',
+                text: 'Debe de iniciar sesión, redirigiendo...',
+                showConfirmButton: false,
+                timer: 2000
+            })
+            setTimeout(() => {
+                window.location = "login.html";
+            }, 2000);
+  }
+})
+
+$('#cambiarValor').click(function(){
+  if(localStorage.getItem("usrSession") !== null){
+    Swal.fire({
+    title: '¿Deseas Cerrar Sesión?',
+    text: "El cierre te redirigira a otra página..",
+    icon: 'warning',
+    showCancelButton: true,
+    confirmButtonColor: '#3085d6',
+    cancelButtonColor: '#d33',
+    confirmButtonText: 'Si'
+  }).then((result) => {
+    if (result.value) {
+      Swal.fire({
+        type: 'success',
+        title: 'Cierre Finalizado',
+        text: 'Redirigiendo al inicio...',
+        showConfirmButton: false,
+        timer: 2000
+        }).then(function () {
+            localStorage.removeItem('usrSession');
+            localStorage.removeItem('refresh');
+            localStorage.removeItem('headers');
+            window.location = "index.html";
+        })
+    }
+  })
+  }
+})
+
+var usuario = JSON.parse(localStorage.getItem("usrSession"))
+new Vue({
+  el: '#app',
+  data () {
+      return {
+        informacion: [],
+        ventas: [],
+        entrega: [],
+        imgFile: ''
+      }
+  },
+  mounted () {
+    axios.post('http://127.0.0.1:8000/outime/venta/obtener_productos_venta/', {ventaID: localStorage.getItem('ventaID')},
+    {headers: {
+                        'Content-Type': 'application/json',
+                        'Authorization': 'Bearer ' + localStorage.getItem('headers')
+                }})
+      .then(response => {
+             if (response.status == 401) {
+                axios.post('http://127.0.0.1:8000/api/token/refresh/', { refresh: localStorage.getItem('refresh')})
+                    .then(response => {
+                        if(response.status == 401){
+                                Swal.fire({
+                                type: 'warning',
+                                title: 'Ooops..',
+                                text: 'Hubo un problema al obtener el nuevo toke, redirigiendo al login...',
+                                showConfirmButton: false,
+                                timer: 2000
+                                }).then(function () {
+                                    localStorage.removeItem('usrSession');
+                                    localStorage.removeItem('refresh');
+                                    localStorage.removeItem('headers');
+                                    window.location = "login.html";
+                                })
+                        }
+                        localStorage.setItem('refresh', response.data.refresh);
+                        localStorage.setItem('headers', response.data.access);
+                        axios.post('http://127.0.0.1:8000/outime/venta/obtener_productos_venta/', {ventaID: localStorage.getItem('ventaID')},
+                        {headers: {
+                        'Content-Type': 'application/json',
+                        'Authorization': 'Bearer ' + localStorage.getItem('headers')
+                        }}).then(response => {
+                            this.detalle()
+                            this.entregas()
+                            this.ventas = response.data
+                        })
+                    })
+                } else {
+                    this.detalle()
+                    this.entregas()
+                    this.ventas = response.data
+                    console.log(this.ventas)
+                }
+        })
+  },
+  methods: {
+      detalle: function() {
+        axios.post('http://127.0.0.1:8000/outime/venta/obtener_productos_venta_informacion/', {ventaID: localStorage.getItem('ventaID')},
+        {headers: {
+                            'Content-Type': 'application/json',
+                            'Authorization': 'Bearer ' + localStorage.getItem('headers')
+                    }})
+        .then(response => {
+                if (response.status == 401) {
+                    axios.post('http://127.0.0.1:8000/api/token/refresh/', { refresh: localStorage.getItem('refresh')})
+                        .then(response => {
+                            if(response.status == 401){
+                                Swal.fire({
+                                type: 'warning',
+                                title: 'Ooops..',
+                                text: 'Hubo un problema al obtener el nuevo toke, redirigiendo al login...',
+                                showConfirmButton: false,
+                                timer: 2000
+                                }).then(function () {
+                                    localStorage.removeItem('usrSession');
+                                    localStorage.removeItem('refresh');
+                                    localStorage.removeItem('headers');
+                                    window.location = "login.html";
+                                })
+                            }
+                            localStorage.setItem('refresh', response.data.refresh);
+                            localStorage.setItem('headers', response.data.access);
+                            axios.post('http://127.0.0.1:8000/outime/venta/obtener_productos_venta_informacion/', {ventaID: localStorage.getItem('ventaID')},
+                            {headers: {
+                            'Content-Type': 'application/json',
+                            'Authorization': 'Bearer ' + localStorage.getItem('headers')
+                            }}).then(response => {
+                                this.informacion = response.data
+                            })
+                        })
+                    } else {
+                        this.informacion = response.data
+                    }
+            })
+      },
+      entregas: function() {
+        axios.post('http://127.0.0.1:8000/outime/venta/obtener_productos_venta_informacion_entrega/', {ventaID: localStorage.getItem('ventaID')},
+        {headers: {
+                            'Content-Type': 'application/json',
+                            'Authorization': 'Bearer ' + localStorage.getItem('headers')
+                    }})
+        .then(response => {
+                if (response.status == 401) {
+                    axios.post('http://127.0.0.1:8000/api/token/refresh/', { refresh: localStorage.getItem('refresh')})
+                        .then(response => {
+                            if(response.status == 401){
+                                Swal.fire({
+                                type: 'warning',
+                                title: 'Ooops..',
+                                text: 'Hubo un problema al obtener el nuevo toke, redirigiendo al login...',
+                                showConfirmButton: false,
+                                timer: 2000
+                                }).then(function () {
+                                    localStorage.removeItem('usrSession');
+                                    localStorage.removeItem('refresh');
+                                    localStorage.removeItem('headers');
+                                    window.location = "login.html";
+                                })
+                            }
+                            localStorage.setItem('refresh', response.data.refresh);
+                            localStorage.setItem('headers', response.data.access);
+                            axios.post('http://127.0.0.1:8000/outime/venta/obtener_productos_venta_informacion_entrega/', {ventaID: localStorage.getItem('ventaID')},
+                            {headers: {
+                            'Content-Type': 'application/json',
+                            'Authorization': 'Bearer ' + localStorage.getItem('headers')
+                            }}).then(response => {
+                                this.entrega = response.data
+                            })
+                        })
+                    } else {
+                        this.entrega = response.data
+                    }
+            })
+      },
+     subirComprobante: function(){
+        let input = document.getElementById('imgFile');
+
+        let data = new FormData();
+        let h = localStorage.getItem('ventaID')
+        data.append('monto_pagado', input.files[0], h +'.jpg');
+        data.append('ventaID', localStorage.getItem('ventaID'));
+        axios.post('http://127.0.0.1:8000/outime/pago/comprobante_enviado_cambiar_valor/', data,
+        {headers: {
+                            'Content-Type': 'application/json',
+                            'Authorization': 'Bearer ' + localStorage.getItem('headers')
+                    }})
+        .then(response => {
+                if (response.status == 401) {
+                    axios.post('http://127.0.0.1:8000/api/token/refresh/', { refresh: localStorage.getItem('refresh')})
+                        .then(response => {
+                            if(response.status == 401){
+                                Swal.fire({
+                                type: 'warning',
+                                title: 'Ooops..',
+                                text: 'Hubo un problema al obtener el nuevo toke, redirigiendo al login...',
+                                showConfirmButton: false,
+                                timer: 2000
+                                }).then(function () {
+                                    localStorage.removeItem('usrSession');
+                                    localStorage.removeItem('refresh');
+                                    localStorage.removeItem('headers');
+                                    window.location = "login.html";
+                                })
+                            }
+                            localStorage.setItem('refresh', response.data.refresh);
+                            localStorage.setItem('headers', response.data.access);
+                            axios.post('http://127.0.0.1:8000/outime/pago/comprobante_enviado_cambiar_valor/', data,
+                            {headers: {
+                            'Content-Type': 'application/json',
+                            'Authorization': 'Bearer ' + localStorage.getItem('headers')
+                            }}).then(response => {
+                                // this.entrega = response.data
+                                Swal.fire({
+                                type: 'success',
+                                title: 'Felicidades',
+                                text: 'Se subio con exito su deposito...',
+                                showConfirmButton: false,
+                                timer: 2000
+                                }).then(function () {
+                                    window.location = "historial.html";
+                                })
+                            })
+                        })
+                    } else {
+                        // this.entrega = response.data
+                        Swal.fire({
+                                type: 'success',
+                                title: 'Felicidades',
+                                text: 'Se subio con exito su deposito...',
+                                showConfirmButton: false,
+                                timer: 2000
+                                }).then(function () {
+                                    window.location = "historial.html";
+                                })
+                    }
+            })
+     }
+  }
+})
+</script>
+</html>

@@ -1,0 +1,22 @@
+{% extends 'base.html' %}
+{% block content %}
+    <a class="btn btn-primary" type="button" href="{% url 'categoria_create' %}" >Nuevo categoria</a>
+    <table class="table">
+        <thead>
+        <tr>
+            <th>ID</th>
+            <th>Nombre</th>
+            <th>Acciones</th>
+        </tr>
+        </thead>
+        <tbody>
+        {% for categoria in categoria_list %}
+            <tr>
+                <td>{{ categoria.id }}</td>
+                <td>{{ categoria.nombre }}</td>
+                <td><a href="{% url 'categoria_delete'  categoria.id %}" class="btn btn-danger" type="button">Eliminar</a> | <a href="{% url 'categoria_edit'  categoria.id %}" class="btn btn-info" type="button">Editar</a></td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+{% endblock %}

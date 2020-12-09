@@ -1,0 +1,57 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div class="card-body">
+{% if user.is_superuser %}
+<a class="btn btn-primary" type="button" href="/outime/usuarios/create/" id="crearUser">Nuevo Usuario</a>
+    <div class="row">
+    <h1>Staff</h1>
+        <table class="table" id="tblusr">
+            <thead>
+            <tr>
+                <th>Nombres</th>
+                <th>Apellidos</th>
+                <th>Correo</th>
+{#                <th>Acciones</th>#}
+            </tr>
+            </thead>
+            <tbody>
+
+            {% for obj_usr in lstDoc %}
+                <tr id="tr{{ obj_usr.id }}">
+                    <td id="n{{ obj_usr.id }}">{{ obj_usr.first_name }}</td>
+                    <td id="a{{ obj_usr.id }}">{{ obj_usr.last_name }}</td>
+                    <td id="c{{ obj_usr.id }}">{{ obj_usr.email }}</td>
+{#                    <td><a id="{{ obj_usr.id }}" class="btn btn-info editar" type="button" href="/outime/usuarios/editar/{{ obj_usr.id }}/">Editar</a>  <a id="{{ obj_usr.id }}" class="btn btn-danger eliminar" type="button" href="/outime/usuarios/delete/{{ obj_usr.id }}/">Eliminar</a></td>#}
+                </tr>
+            {% endfor %}
+            </tbody>
+        </table>
+    </div>
+{% endif %}
+    <div class="row">
+    <h1>Usuarios Clientes</h1>
+        <table class="table" id="tblusr">
+            <thead>
+            <tr>
+                <th>Nombres</th>
+                <th>Apellidos</th>
+                <th>Correo</th>
+{#                <th>Acciones</th>#}
+            </tr>
+            </thead>
+            <tbody>
+
+            {% for obj_usr in lstEst %}
+                <tr id="tr{{ obj_usr.id }}">
+                    <td id="n{{ obj_usr.id }}">{{ obj_usr.first_name }}</td>
+                    <td id="a{{ obj_usr.id }}">{{ obj_usr.last_name }}</td>
+                    <td id="c{{ obj_usr.id }}">{{ obj_usr.email }}</td>
+{#                    <td><a id="{{ obj_usr.id }}" class="btn btn-info editar" type="button" href="/outime/usuarios/editar/{{ obj_usr.id }}/">Editar</a>  <a id="{{ obj_usr.id }}" class="btn btn-danger eliminar" type="button" href="/outime/usuarios/delete/{{ obj_usr.id }}/">Eliminar</a></td>#}
+                </tr>
+            {% endfor %}
+            </tbody>
+        </table>
+    </div>
+</div>
+{% endblock %}

@@ -1,0 +1,210 @@
+{% extends 'base.html' %}
+{% block content %}
+
+    <main>
+        <div class="container">
+            <div class="row mt-3">
+                <div class="col" id="app">
+                    <h2 class="d-flex justify-content-center mb-3">Detalle de Venta</h2>
+                    <!-- <form id="procesar-pago" action="#" method="post"> -->
+                    <div>
+                        <div class="form-group row">
+                            <label for="cliente" class="col-12 col-md-2 col-form-label h2">Cliente :</label>
+                            <div class="col-12 col-md-10">
+                                <input type="text" class="form-control" id="cliente" value="{{pago.id_venta.nombre_factura}}" disabled
+                                    placeholder="Ingresa nombre cliente para la factura" required name="destinatario">
+                            </div>
+                        </div>
+                        <div class="form-group row">
+                            <label for="email" class="col-12 col-md-2 col-form-label h2">Correo :</label>
+                            <div class="col-12 col-md-10">
+                                <input type="text" class="form-control" id="correo" required placeholder="Ingresa tu correo" disabled name="cc_to" value="{{pago.id_venta.usuario.email}}">
+                            </div>
+                        </div>
+                        <div class="form-group row">
+                            <label for="nit" class="col-12 col-md-2 col-form-label h2">NIT :</label>
+                            <div class="col-12 col-md-10">
+                                <input type="text" class="form-control" id="nitFactura" required placeholder="Ingresa el NIT" disabled value="{{pago.id_venta.nit}}">
+                            </div>
+                        </div>
+                        <div class="form-group row">
+                            <label class="col-12 col-md-2 col-form-label h2">Estado de la venta :</label>
+                            <div class="col-12 col-md-10">
+                                {% if pago.id_venta.estado == 2 %}
+                                    <input type="text" class="form-control" disabled value="Pago Aceptado">
+                                {% elif pago.id_venta.estado == 3 %}
+                                    <input type="text" class="form-control" disabled value="Entregado">
+                                {% elif pago.id_venta.estado == 1 %}
+                                    <input type="text" class="form-control" disabled value="Esperando Aprobación del pago">
+                                {% elif pago.id_venta.estado == -1 %}
+                                    <input type="text" class="form-control" disabled value="Pago Rechazado">
+                                {% elif pago.id_venta.estado == -2 %}
+                                    <input type="text" class="form-control" disabled value="Pago Anulado">
+                                {% else %}
+                                    <input type="text" class="form-control" disabled value="Requiere subir comprobante de pago">
+                                {% endif %}
+                            </div>
+                        </div>
+                        <div >
+                            <div class="form-group row">
+                                <label for="direccion" class="col-12 col-md-2 col-form-label h2">Dirección de Entrega :</label>
+                                <div class="col-12 col-md-10">
+                                    <input type="text" class="form-control" id="dirEntrega" required placeholder="Ingresa la dirección de entrega" value="{{ entregas.direccion_entrega }}" disabled>
+                                </div>
+                            </div>
+                            <div class="form-group row">
+                                <label for="latitud" class="col-12 col-md-2 col-form-label h2">Latitud :</label>
+                                <div class="col-12 col-md-10">
+                                    <input type="text" class="form-control" id="latEntrega" placeholder="Ingresa la latitud" disabled value="{{entregas.latitud}}">
+                                </div>
+                            </div>
+                            <div class="form-group row">
+                                <label for="longitud" class="col-12 col-md-2 col-form-label h2">Longitud :</label>
+                                <div class="col-12 col-md-10">
+                                    <input type="text" class="form-control" id="longEntrega" placeholder="Ingresa la longitud" disabled value="{{entregas.longitud}}">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                        <div class="form-group table-responsive" >
+                            <table class="table" id="lista-compra" >
+                                <thead>
+                                    <tr>
+                                        <th scope="col">Imagen</th>
+                                        <th scope="col">Nombre</th>
+                                        <th scope="col">Precio</th>
+                                        <th scope="col">Cantidad</th>
+                                        <th scope="col">Sub Total</th>
+                                    </tr>
+
+                                </thead>
+                                <tbody>
+                                {% for venta in detalleventa %}
+                                    <tr>
+                                        <td><img src="http://127.0.0.1:8000/media/{{venta.producto.imagen_producto}}"></td>
+                                        <td>{{venta.producto.nombre}}</td>
+                                        <td>{{venta.producto.precio}}</td>
+                                        <td>{{venta.cantidad_vendida}}</td>
+                                        <td>{{venta.precio_venta}}*{{venta.cantidad_vendida }}</td>
+                                    </tr>
+                                {% endfor %}
+                                </tbody>
+                            </table>
+                        </div>
+                        <div class="form-group" id="ocultarSiN">
+                            <label class="col-12 col-md-2 col-form-label h2">Comprobante de pago :</label>
+                                <div class="col-12 col-md-10">
+                                    {% if pago.monto_pagado is None or pago.monto_pagado == ''%}
+                                    <img src="https://thumbs.dreamstime.com/b/no-image-available-icon-flat-vector-no-image-available-icon-flat-vector-illustration-132482953.jpg" style="width: 150px">
+                                    {% else %}
+                                    <img src="http://127.0.0.1:8000/media/{{ pago.monto_pagado }}">
+                                    {% endif %}
+                                </div>
+                                <br>
+                        </div>
+
+                    {% if pago.id_venta.estado == 2 %}
+                        <btn class="btn btn-success" data-id="{{pago.id_venta.id}}" id="entregaVenta">Producto Entregado</btn>
+                        <btn class="btn btn-danger" data-id="{{pago.id_venta.id}}" id="anularVenta1">Anular Venta</btn>
+                    {% elif pago.id_venta.estado == 1 %}
+                        <btn class="btn btn-danger" data-id="{{pago.id}}" id="anularVenta2">Rechazar Pago</btn>
+                        <btn class="btn btn-success" data-id="{{pago.id}}" id="aprobarVenta">Aprobar Pago</btn>
+                    {% elif pago.id_venta.estado == 0 %}
+                        <btn class="btn btn-danger" data-id="{{pago.id_venta.id}}" id="anularVenta3">Anular Venta</btn>
+                    {% endif %}
+
+                </div>
+            </div>
+
+        </div>
+    </main>
+
+    <script>
+    $('#aprobarVenta').click(function () {
+        const generated_csrf_token = "{{ csrf_token }}";
+        let id = $(this).attr('data-id')
+        $.ajax({
+            url: "{% url 'venta_aprobada' %}",
+            type: "POST",
+            data: { 'id': id } ,
+            dataType: 'json',
+            headers: { 'X-CSRFToken': generated_csrf_token },
+            statusCode: {
+            200: function(xhr) {
+                window.location.assign("{% url 'venta_list' %}")
+            }
+          }
+       })
+    })
+
+    $('#anularVenta2').click(function () {
+        const generated_csrf_token = "{{ csrf_token }}";
+        let id = $(this).attr('data-id')
+        $.ajax({
+            url: "{% url 'venta_rechazada' %}",
+            type: "POST",
+            data: { 'id': id } ,
+            dataType: 'json',
+            headers: { 'X-CSRFToken': generated_csrf_token },
+            statusCode: {
+            200: function(xhr) {
+                window.location.assign("{% url 'venta_list' %}")
+            }
+          }
+       })
+    })
+
+    $('#anularVenta3').click(function () {
+        const generated_csrf_token = "{{ csrf_token }}";
+        let id = $(this).attr('data-id')
+        $.ajax({
+            url: "{% url 'venta_anular' %}",
+            type: "POST",
+            data: { 'id': id } ,
+            dataType: 'json',
+            headers: { 'X-CSRFToken': generated_csrf_token },
+            statusCode: {
+            200: function(xhr) {
+                window.location.assign("{% url 'venta_list' %}")
+            }
+          }
+       })
+    })
+
+    $('#entregaVenta').click(function () {
+        const generated_csrf_token = "{{ csrf_token }}";
+        let id = $(this).attr('data-id')
+        $.ajax({
+            url: "{% url 'venta_entregada' %}",
+            type: "POST",
+            data: { 'id': id } ,
+            dataType: 'json',
+            headers: { 'X-CSRFToken': generated_csrf_token },
+            statusCode: {
+            200: function(xhr) {
+                window.location.assign("{% url 'venta_list' %}")
+            }
+          }
+       })
+    })
+
+    $('#anularVenta1').click(function () {
+        const generated_csrf_token = "{{ csrf_token }}";
+        let id = $(this).attr('data-id')
+        $.ajax({
+            url: "{% url 'venta_anular' %}",
+            type: "POST",
+            data: { 'id': id } ,
+            dataType: 'json',
+            headers: { 'X-CSRFToken': generated_csrf_token },
+            statusCode: {
+            200: function(xhr) {
+                window.location.assign("{% url 'venta_list' %}")
+            }
+          }
+       })
+    })
+</script>
+
+{% endblock %}

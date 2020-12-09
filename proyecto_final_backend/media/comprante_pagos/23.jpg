@@ -1,0 +1,45 @@
+﻿using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+
+public class DetectorScript : MonoBehaviour
+{
+    static Vector3 speed;
+    // Start is called before the first frame update
+    void Start()
+    {
+        
+    }
+
+    // Update is called once per frame
+    void Update()
+    {
+        speed = DiceScript.speed;
+    }
+
+    void OnTriggerStay(Collider col)
+    {
+        if(speed.x == 0f && speed.y == 0f && speed.z == 0f){
+            switch(col.gameObject.name){
+                case "Side 1":
+                    DiceScript.number = "El número obtenido es: 6";
+                    break;
+                case "Side 2":
+                    DiceScript.number = "El número obtenido es: 5";
+                    break;
+                case "Side 3":
+                    DiceScript.number = "El número obtenido es: 4";
+                    break;
+                case "Side 4":
+                    DiceScript.number = "El número obtenido es: 3";
+                    break;
+                case "Side 5":
+                    DiceScript.number = "El número obtenido es: 2";
+                    break;
+                default:
+                    DiceScript.number = "El número obtenido es: 1";
+                    break;
+            }
+        }
+    }
+}

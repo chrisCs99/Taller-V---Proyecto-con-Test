@@ -1,0 +1,223 @@
+{% extends 'base.html' %}
+{% block content %}
+    <div class="card-body">
+    <table class="table">
+        <thead>
+        <tr>
+            <th colspan="8" style="text-align: center">VENTAS SIN PAGAR</th>
+        </tr>
+        <tr>
+            <th>ID</th>
+            <th>Nombre Factura</th>
+            <th>NIT</th>
+            <th>Fecha</th>
+            <th>Total</th>
+            <th>Estado</th>
+            <th>Acciones</th>
+        </tr>
+        </thead>
+        <tbody>
+        {% for venta in venta_list %}
+            {% if venta.estado == 0 %}
+                <tr>
+                    <td>{{ venta.id }}</td>
+                    <td>{{ venta.nombre_factura }}</td>
+                    <td>{{ venta.nit }}</td>
+                    <td>{{ venta.fecha_hora }}</td>
+                    <td>{{ venta.total_vendido }}</td>
+                    {% if venta.estado == 0 %}
+                        <td>Sin subir deposito</td>
+                    {% endif %}
+                    <td><a href="{% url 'venta_detail'  venta.id %}" class="btn btn-info" type="button">Ver detalle</a></td>
+                </tr>
+            {% endif %}
+        {% endfor %}
+        </tbody>
+    </table>
+    </div>
+
+    <div class="card-body">
+    <table class="table">
+        <thead>
+        <tr>
+            <th colspan="8" style="text-align: center">VENTAS POR ACEPTAR</th>
+        </tr>
+        <tr>
+            <th>ID</th>
+            <th>Nombre Factura</th>
+            <th>NIT</th>
+            <th>Fecha</th>
+            <th>Total</th>
+            <th>Estado</th>
+            <th>Acciones</th>
+        </tr>
+        </thead>
+        <tbody>
+        {% for venta in venta_list %}
+            {% if venta.estado == 1 %}
+                <tr>
+                    <td>{{ venta.id }}</td>
+                    <td>{{ venta.nombre_factura }}</td>
+                    <td>{{ venta.nit }}</td>
+                    <td>{{ venta.fecha_hora }}</td>
+                    <td>{{ venta.total_vendido }}</td>
+                    {% if venta.estado == 1 %}
+                        <td>Por Aprobar Pago</td>
+                    {% endif %}
+                    <td><a href="{% url 'venta_detail'  venta.id %}" class="btn btn-info" type="button">Ver detalle</a></td>
+                </tr>
+            {% endif %}
+        {% endfor %}
+        </tbody>
+    </table>
+    </div>
+
+    <div class="card-body">
+    <table class="table">
+        <thead>
+        <tr>
+            <th colspan="8" style="text-align: center">VENTAS ACEPTADAS</th>
+        </tr>
+        <tr>
+            <th>ID</th>
+            <th>Nombre Factura</th>
+            <th>NIT</th>
+            <th>Fecha</th>
+            <th>Total</th>
+            <th>Estado</th>
+            <th>Acciones</th>
+        </tr>
+        </thead>
+        <tbody>
+        {% for venta in venta_list %}
+            {% if venta.estado == 2 %}
+                <tr>
+                    <td>{{ venta.id }}</td>
+                    <td>{{ venta.nombre_factura }}</td>
+                    <td>{{ venta.nit }}</td>
+                    <td>{{ venta.fecha_hora }}</td>
+                    <td>{{ venta.total_vendido }}</td>
+                    {% if venta.estado == 2 %}
+                        <td>Pago Aceptado</td>
+                    {% endif %}
+                    <td><a href="{% url 'venta_detail'  venta.id %}" class="btn btn-info" type="button">Ver detalle</a></td>
+                </tr>
+            {% endif %}
+        {% endfor %}
+        </tbody>
+    </table>
+    </div>
+
+    <div class="card-body">
+    <table class="table">
+        <thead>
+        <tr>
+            <th colspan="8" style="text-align: center">VENTAS ENTREGADAS</th>
+        </tr>
+        <tr>
+            <th>ID</th>
+            <th>Nombre Factura</th>
+            <th>NIT</th>
+            <th>Fecha</th>
+            <th>Total</th>
+            <th>Estado</th>
+            <th>Acciones</th>
+        </tr>
+        </thead>
+        <tbody>
+        {% for venta in venta_list %}
+            {% if venta.estado == 3 %}
+                <tr>
+                    <td>{{ venta.id }}</td>
+                    <td>{{ venta.nombre_factura }}</td>
+                    <td>{{ venta.nit }}</td>
+                    <td>{{ venta.fecha_hora }}</td>
+                    <td>{{ venta.total_vendido }}</td>
+                    {% if venta.estado == 3 %}
+                        <td>Entregado</td>
+                    {% endif %}
+                    <td><a href="{% url 'venta_detail'  venta.id %}" class="btn btn-info" type="button">Ver detalle</a></td>
+                </tr>
+            {% endif %}
+        {% endfor %}
+        </tbody>
+    </table>
+    </div>
+
+    <div class="card-body">
+    <table class="table">
+        <thead>
+        <tr>
+            <th colspan="8" style="text-align: center">VENTAS ANULADAS/RECHAZADAS</th>
+        </tr>
+        <tr>
+            <th>ID</th>
+            <th>Nombre Factura</th>
+            <th>NIT</th>
+            <th>Fecha</th>
+            <th>Total</th>
+            <th>Estado</th>
+            <th>Acciones</th>
+        </tr>
+        </thead>
+        <tbody>
+        {% for venta in venta_list %}
+            {% if venta.estado == -1 or venta.estado == -2 %}
+                <tr>
+                    <td>{{ venta.id }}</td>
+                    <td>{{ venta.nombre_factura }}</td>
+                    <td>{{ venta.nit }}</td>
+                    <td>{{ venta.fecha_hora }}</td>
+                    <td>{{ venta.total_vendido }}</td>
+                    {% if venta.estado == -1 %}
+                        <td>Rechazado</td>
+                        {% else %}
+                        <td>Anulado</td>
+                    {% endif %}
+                    <td><a href="{% url 'venta_detail'  venta.id %}" class="btn btn-info" type="button">Ver detalle</a></td>
+                </tr>
+            {% endif %}
+        {% endfor %}
+        </tbody>
+    </table>
+    </div>
+
+<script>
+    $('.anulVentats').click(function () {
+        $('#motivoAnulacion').val('')
+        $('#btnAnular').show();
+        $('#btnCancelar').hide();
+        $('#idVentaAn').val($(this).attr('data-id'))
+        $('#exampleModal').modal('show');
+    })
+
+    $('.editar').click(function () {
+        names = $(this).attr('data-nomb')
+        lastnames = $(this).attr('data-ape')
+        emails = $(this).attr('data-corr')
+        $('#id').val($(this).attr('data-id')),
+        $('#nombres').val(names)
+        $('#apellidos').val(lastnames)
+        $('#correo').val(emails)
+        $('#btnGuardarUsuario').hide();
+        $('#btnEditarUsuario').show();
+        $('#exampleModal').modal('show');
+    })
+
+    {#$('#btnAnular').click(function () {#}
+    {#    const generated_csrf_token = "{{ csrf_token }}";#}
+    {#    $.ajax({#}
+    {#        url: "{% url 'anul_venta_lista' %}",#}
+    {#        type: "POST",#}
+    {#        data: { 'motivo': $('#motivoAnulacion').val(), 'id': $('#idVentaAn').val() } ,#}
+    {#        dataType: 'json',#}
+    {#        headers: { 'X-CSRFToken': generated_csrf_token },#}
+    {#        statusCode: {#}
+    {#        200: function(xhr) {#}
+    {#            window.location.assign("{% url 'venta_list' %}")#}
+    {#        }#}
+    {#      }#}
+    {#   })#}
+    {#})#}
+</script>
+{% endblock %}

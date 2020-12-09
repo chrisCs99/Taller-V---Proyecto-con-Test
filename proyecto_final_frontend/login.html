@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link href="bootstrap/css/bootstrap.css" rel="stylesheet">
+        <script src="js/jquery-3.4.1.min.js"></script>
+        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css" integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/" crossorigin="anonymous">
+    
+        <link rel="stylesheet" href="css/sweetalert2.min.css">
+        <title>SkyNet</title>
+    </head>
+    <body>
+        <nav class="navbar navbar-expand-lg navbar-light bg-light">
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo01" aria-controls="navbarTogglerDemo01" aria-expanded="false" aria-label="Toggle navigation">
+              <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarTogglerDemo01">
+              <a class="navbar-brand" href="index.html">SkyNet</a>
+              <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
+                <li class="nav-item active">
+                  <a class="nav-link" href="index.html">Home <span class="sr-only">(current)</span></a>
+                </li>
+                <li class="nav-item active">
+                  <a class="nav-link" href="login.html">Iniciar Sesion <span class="sr-only">(current)</span></a>
+                </li>
+                <li>
+                    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse"
+                              aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+                              <span class="navbar-toggler-icon"></span>
+                          </button>
+                          <div class="collapse navbar-collapse" id="navbarCollapse">
+                              <ul class="navbar-nav mr-auto">
+                                  <li class="nav-item dropdown">
+                                      <img src="img/cart.jpeg" class="nav-link dropdown-toggle img-fluid" height="40px"
+                                          width="40px" href="#" id="dropdown01" data-toggle="dropdown" aria-haspopup="true"
+                                          aria-expanded="false"></img>
+                                      <div id="carrito" class="dropdown-menu" aria-labelledby="navbarCollapse">
+                                          <table id="lista-carrito" class="table">
+                                              <thead>
+                                                  <tr>
+                                                      <th>Imagen</th>
+                                                      <th>Nombre</th>
+                                                      <th>Precio</th>
+                                                      <th>Cantidad</th>
+                                                      <th></th>
+                                                  </tr>
+                                              </thead>
+                                              <tbody></tbody>
+                                          </table>
+      
+                                          <a href="#" id="vaciar-carrito" class="btn btn-primary btn-block">Vaciar Carrito</a>
+                                          <a href="#" id="procesar-pedido" class="btn btn-danger btn-block">Procesar
+                                              Compra</a>
+                                      </div>
+                                  </li>
+                              </ul>
+                          </div>
+                  </li>
+              </ul>
+            </div>
+          </nav>
+
+    <div class="modal-body row" id="customer_login">
+
+        <div class="col-md-6" id="app">
+            <h2>Acceder</h2>
+            <!-- <form class="form-group" method="POST"> -->
+                <p class="form-row">
+                    <label ><strong>Nombre de usuario o correo electrónico&nbsp;</strong></label>
+                    <input type="text" class="input-text" name="username" id="username" required value="">
+                </p>
+                    <p class="form-row">
+                    <label for="password"><strong>Contraseña&nbsp;</strong></label>
+                    <input class="" type="password" name="password" id="password" required >
+                </p>
+   
+                <p class="form-row">
+                    <button class="btn btn-primary" id="accederBtn" @click="login_sesion">Acceder</button>
+                </p>
+            <!-- </form> -->
+    
+    
+        </div>
+    
+        <div class="col-md-6" id="app2">
+    
+            <h2>Registrarse</h2>
+    
+            <!-- <form class="form-group"> -->
+                    <p class="form-row">
+                        <label ><strong>Nombre&nbsp;</strong></label>
+                        <input type="text" class="input-text" required name="nombre" id="reg_nombre" required value="">
+                    </p>
+                    <p class="form-row">
+                        <label ><strong>Apellido&nbsp;</strong></label>
+                        <input type="text" class="input-text" required name="apellido" id="reg_apellido" required value="">
+                    </p>
+                    <p class="form-row">
+                        <label ><strong>Nombre de usuario&nbsp;</strong></label>
+                        <input type="text" class="input-text" required name="username" id="reg_username" required autocomplete="username" value="">
+                    </p>
+                
+                <p class="form-row">
+                    <label ><strong>Dirección de correo electrónico&nbsp;</strong></label>
+                    <input type="email" class="input-text" name="email" id="reg_email" required autocomplete="email" value="">
+                </p>
+    
+                    <p class="form-row">
+                        <label for="reg_password"><strong>Contraseña&nbsp;</strong></label>
+                        <input type="password" class="input-text" name="password" id="reg_password" required autocomplete="new-password">
+                    </p>
+                <p class="form-row">
+                <button class="btn btn-primary" name="register" value="Registrarse" @click="registrar_usuario_new">Registrarse</button>
+                </p>
+            <!-- </form> -->
+    
+        </div>
+    
+    </div>
+
+    <div class="card mb-4 shadow-sm" id="lista-producto" style="display: none;">
+        <div class="card-header">
+            <h4 class="my-0 font-weight-bold tituloNa" id="prodNames">f</h4>
+        </div>
+        <div class="card-body">
+            <img class="card-img-top" id="prodImage">
+            <h1 class="card-title pricing-card-title precio" id="prodPrecio">F</h1>
+            <h1 class="card-title pricing-card-title prodID" id="prodIDs">F</h1>
+      
+            <button class="btn btn-block btn-primary agregar-carrito" id="btnCarritoAgregar" data-id="1">Comprar</button>
+        </div>
+</body>
+<script>
+    // $('#accederBtn').click(function() {
+    //     $.ajax({
+    //         url: "http://127.0.0.1:8000/outime/usr_stat/login_usuario/",
+    //         type: "POST",
+    //         data: {'username':$('#username').val(),'password':$('#password').val()},
+            
+    //     }).done(function (response) {
+    //         console.log('a ' + response)
+    //     });    
+    // });
+</script>
+
+<script src="js/axios.js"></script>
+<script src="js/vue.min.js"></script>
+<script src="js/bootstrap.min.js"></script>
+<script src="js/sweetalert2.min.js"></script>
+<script src="js/carrito.js"></script>
+<script src="js/pedido.js"></script>
+<script>
+new Vue({
+  el: '#app',
+  data () {
+      return {
+        usuario: []
+      }
+  },
+  mounted () {
+  },
+  methods: {
+      login_sesion: function() {
+          usuario = $('#username').val()
+          contra = $('#password').val()
+            axios.post('http://127.0.0.1:8000/outime/usr_stat/login_usuario/', {username: usuario, password: contra}, {headers: {
+                'Content-Type': 'application/json'
+    }})
+            .then(response => {
+                // this.usuario = response.data
+                if(response.status == 404){
+                    Swal.fire({
+                                type: 'warning',
+                                title: 'Error al Iniciar Sesión',
+                                text: 'Error al iniciar sesión, verifica los datos ingresados...',
+                                showConfirmButton: false,
+                                timer: 2000
+                                })
+                }
+                var testObject = { 'id': response.data.id, 'email': response.data.email, 'username': response.data.username, 'name': response.data.first_name, 'lastname': response.data.last_name };
+                localStorage.setItem('usrSession', JSON.stringify(testObject));
+                console.log(response)
+                axios.post('http://127.0.0.1:8000/api/token/', { username : usuario, password: contra})
+                .then( response => {
+                localStorage.setItem('refresh', response.data.refresh);
+                localStorage.setItem('headers', response.data.access);
+                Swal.fire({
+                                type: 'success',
+                                title: 'Felicidades',
+                                text: 'Acabas de iniciar sesión, redirigiendo...',
+                                showConfirmButton: false,
+                                timer: 2000
+                                }).then(function () {
+                                    if (localStorage.getItem('carritoRedirect') === null) {
+                                        window.location = "perfil.html";
+                                    } else {
+                                        localStorage.removeItem('carritoRedirect')
+                                        window.location = "compra.html";
+                                    }
+                                    
+                                })
+                }).catch(error => {
+                Swal.fire({
+                                type: 'warning',
+                                title: 'Error al Iniciar Sesión',
+                                text: 'Error al iniciar sesión, verifica los datos ingresados...',
+                                showConfirmButton: false,
+                                timer: 2000
+                                })
+                })
+                
+            })
+            .catch(error => {
+                Swal.fire({
+                                type: 'warning',
+                                title: 'Error al Iniciar Sesión',
+                                text: 'Error al iniciar sesión, verifica los datos ingresados...',
+                                showConfirmButton: false,
+                                timer: 2000
+                                })
+            })
+      }
+  }
+})
+
+new Vue({
+  el: '#app2',
+  data () {
+      return {
+        usuario: []
+      }
+  },
+  mounted () {
+  },
+  methods: {
+      registrar_usuario_new: function() {
+          usuario = $('#reg_username').val()
+          contra = $('#reg_password').val()
+          correo = $('#reg_email').val()
+          nombre = $('#reg_nombre').val()
+          apellido = $('#reg_apellido').val()
+            axios.post('http://127.0.0.1:8000/outime/usr_stat/registrar_usuario/', {username: usuario, password: contra, last_name: apellido, first_name: nombre, email: correo}, {headers: {
+        'Content-Type': 'application/json'
+    }})
+            .then(response => {
+                // this.usuario = response.data
+                var testObject = { 'id': response.data.userid, 'email': response.data.email, 'username': response.data.username, 'name': response.data.name, 'lastname': response.data.lastname };
+                localStorage.setItem('usrSession', JSON.stringify(testObject));
+                axios.post('http://127.0.0.1:8000/api/token/', { username : usuario, password: contra})
+                .then( response => {
+                localStorage.setItem('refresh', response.data.refresh);
+                localStorage.setItem('headers', response.data.access);
+                Swal.fire({
+                                type: 'success',
+                                title: 'Felicidades',
+                                text: 'Acabas de registrarte, redirigiendo a tú perfil...',
+                                showConfirmButton: false,
+                                timer: 2000
+                                }).then(function () {
+                                    window.location = "perfil.html";
+                                })    
+                }).catch(error => {
+                console.log(error)
+                })
+            })
+            .catch(error => {
+                console.log(error)
+            })
+      }
+  }
+})
+</script>
+</html>

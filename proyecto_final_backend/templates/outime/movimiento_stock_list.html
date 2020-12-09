@@ -1,0 +1,31 @@
+{% extends 'base.html' %}
+{% block content %}
+    <table class="table">
+        <thead>
+        <tr>
+            <th>ID</th>
+            <th>Cliente</th>
+            <th>Fecha</th>
+            <th>Producto</th>
+            <th>Monto</th>
+            <th>Movimiento</th>
+        </tr>
+        </thead>
+        <tbody>
+        {% for mov in movimiento_stock_list %}
+            <tr>
+                <td>{{ mov.id }}</td>
+                <td>{{ mov.id_referencia.nombre_factura }}</td>
+                <td>{{ mov.id_referencia.fecha_hora }}</td>
+                <td>{{ mov.id_producto.nombre }}</td>
+                <td>{{ mov.cantidad }}</td>
+                {% if mov.tipo_movimiento == 1 %}
+                <td>EGRESO</td>
+                {% else %}
+                    <td>INGRESO</td>
+                {% endif %}
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+{% endblock %}

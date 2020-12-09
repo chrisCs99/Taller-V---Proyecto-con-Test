@@ -1,0 +1,301 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+        content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/estilo.css">
+    <script src="js/popper.min.js"></script>
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css"
+        integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/" crossorigin="anonymous">
+
+    <link rel="stylesheet" href="css/sweetalert2.min.css">
+
+    <title>Carrito Compras en JavaScript</title>
+
+</head>
+
+<body>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo01" aria-controls="navbarTogglerDemo01" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarTogglerDemo01">
+          <a class="navbar-brand" href="index.html">SkyNet</a>
+          <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
+            <li class="nav-item active">
+              <a class="nav-link" href="index.html">Home <span class="sr-only">(current)</span></a>
+            </li>
+            <li class="nav-item active">
+              <a class="nav-link" href="perfil.html">Cuenta <span class="sr-only">(current)</span></a>
+            </li>
+            <li class="nav-item active">
+                <a class="nav-link" href="historial.html">Historial de Compras <span class="sr-only">(current)</span></a>
+              </li>
+            <li class="nav-item active">
+                <a class="nav-link" href="#" id="cambiarValor">Desconectarse <span class="sr-only">(current)</span></a>
+              </li>
+          </ul>
+        </div>
+      </nav>
+
+    <main>
+        <div class="container">
+            <div class="row mt-3">
+                <div class="col">
+                    <h2 class="d-flex justify-content-center mb-3">Realizar Compra</h2>
+                    <!-- <form id="procesar-pago" action="#" method="post"> -->
+                        <div class="form-group row">
+                            <label for="cliente" class="col-12 col-md-2 col-form-label h2">Cliente :</label>
+                            <div class="col-12 col-md-10">
+                                <input type="text" class="form-control" id="cliente"
+                                    placeholder="Ingresa nombre cliente para la factura" required name="destinatario">
+                            </div>
+                        </div>
+                        <div class="form-group row">
+                            <label for="email" class="col-12 col-md-2 col-form-label h2">Correo :</label>
+                            <div class="col-12 col-md-10">
+                                <input type="text" class="form-control" id="correo" required placeholder="Ingresa tu correo" name="cc_to">
+                            </div>
+                        </div>
+                        <div class="form-group row">
+                            <label for="nit" class="col-12 col-md-2 col-form-label h2">NIT :</label>
+                            <div class="col-12 col-md-10">
+                                <input type="text" class="form-control" id="nitFactura" required placeholder="Ingresa el NIT">
+                            </div>
+                        </div>
+                        <div class="form-group row">
+                            <label for="direccion" class="col-12 col-md-2 col-form-label h2">Dirección de Entrega :</label>
+                            <div class="col-12 col-md-10">
+                                <input type="text" class="form-control" id="dirEntrega" required placeholder="Ingresa la dirección de entrega">
+                            </div>
+                        </div>
+                        <div class="form-group row">
+                            <label for="latitud" class="col-12 col-md-2 col-form-label h2">Latitud :</label>
+                            <div class="col-12 col-md-10">
+                                <input type="text" class="form-control" id="latEntrega" placeholder="Ingresa la latitud">
+                            </div>
+                        </div>
+                        <div class="form-group row">
+                            <label for="longitud" class="col-12 col-md-2 col-form-label h2">Longitud :</label>
+                            <div class="col-12 col-md-10">
+                                <input type="text" class="form-control" id="longEntrega" placeholder="Ingresa la longitud">
+                            </div>
+                        </div>
+
+                        <div id="carrito" class="form-group table-responsive" >
+                            <table class="table" id="lista-compra" >
+                                <thead>
+                                    <tr>
+                                        <th scope="col">Imagen</th>
+                                        <th scope="col">Nombre</th>
+                                        <th scope="col">Precio</th>
+                                        <th scope="col">Cantidad</th>
+                                        <th scope="col">Sub Total</th>
+                                        <th scope="col">Eliminar</th>
+                                    </tr>
+
+                                </thead>
+                                <tbody >
+
+                                </tbody>
+                                <!-- <tr>
+                                    <th colspan="4" scope="col" class="text-right">SUB TOTAL :</th>
+                                    <th scope="col">
+                                        <p id="subtotal"></p>
+                                    </th> -->
+                                    <!-- <th scope="col"></th> -->
+                                <!-- </tr>
+                                <tr>
+                                    <th colspan="4" scope="col" class="text-right">IGV :</th>
+                                    <th scope="col">
+                                        <p id="igv"></p>
+                                    </th> -->
+                                    <!-- <th scope="col"></th> -->
+                                </tr>
+                                <tr>
+                                    <th colspan="4" scope="col" class="text-right">TOTAL BS :</th>
+                                    <th scope="col">
+                                        <input id="total" name="monto" class="font-weight-bold border-0" readonly style="background-color: white;"></input>
+                                    </th>
+                                    <!-- <th scope="col"></th> -->
+                                </tr>
+
+                            </table>
+                        </div>
+
+                        <div class="row justify-content-center" id="loaders">
+                            <img id="cargando" src="img/cargando.gif" width="220">
+                        </div>
+
+                        <div class="row justify-content-between">
+                            <div class="col-md-4 mb-2">
+                                <a href="index.html" class="btn btn-info btn-block">Seguir comprando</a>
+                            </div>
+                            <div class="col-xs-12 col-md-4" id="appCompra">
+                                <button  class="btn btn-success btn-block" id="procesar-compra" @click="procesar_compra">Realizar compra</button>
+                            </div>
+                        </div>
+                    <!-- </form> -->
+
+
+                </div>
+
+
+            </div>
+
+        </div>
+    </main>
+
+
+
+
+
+    </div>
+
+    <script src="js/axios.js"></script>
+    <script src="js/vue.min.js"></script>
+    <script src="js/jquery-3.4.1.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/sweetalert2.min.js"></script>
+
+    <script type="text/javascript" src="//ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/emailjs-com@2.3.2/dist/email.min.js"></script>
+
+    <script src="js/carrito.js"></script>
+    <script src="js/compra.js"></script>
+
+    <script>
+        $(document).ready(function() {
+            if(localStorage.getItem("usrSession") === null){
+            Swal.fire({
+                type: 'error',
+                title: 'Oops...',
+                text: 'Debe de iniciar sesión, redirigiendo...',
+                showConfirmButton: false,
+                timer: 2000
+            })
+            setTimeout(() => {
+                window.location = "login.html";
+            }, 2000);
+            }
+        })
+
+        $('#cambiarValor').click(function(){
+            if(localStorage.getItem("usrSession") !== null){
+                Swal.fire({
+                title: '¿Deseas Cerrar Sesión?',
+                text: "El cierre te redirigira a otra página..",
+                icon: 'warning',
+                showCancelButton: true,
+                confirmButtonColor: '#3085d6',
+                cancelButtonColor: '#d33',
+                confirmButtonText: 'Si'
+            }).then((result) => {
+                if (result.value) {
+                Swal.fire({
+                    type: 'success',
+                    title: 'Cierre Finalizado',
+                    text: 'Redirigiendo al inicio...',
+                    showConfirmButton: false,
+                    timer: 2000
+                    }).then(function () {
+                        localStorage.removeItem('usrSession');
+                        localStorage.removeItem('refresh');
+                        localStorage.removeItem('headers');
+                        window.location = "index.html";
+                    })
+                }
+            })
+            }
+        })
+
+        new Vue({
+        el: '#appCompra',
+        data () {
+            return {
+                usuario: []
+            }
+        },
+        mounted () {
+        },
+        methods: {
+            procesar_compra: function() {
+                var lstProductos = JSON.parse(localStorage.getItem("productos"))
+                var usuario = JSON.parse(localStorage.getItem("usrSession"))
+                var factName = $('#cliente').val()
+                var valNit = $('#nitFactura').val()
+                var valPrecioTotal = $('#total').val()
+                var valDireccion = $('#dirEntrega').val()
+                var valLat = $('#latEntrega').val()
+                var valLong = $('#longEntrega').val()
+                if (valLat == '' || valLat.length == 0) {
+                    valLat = '0'
+                }
+                if (valLong == '' || valLong.length == 0) {
+                    valLong = '0'
+                }
+                axios.post('http://127.0.0.1:8000/outime/venta/crear_venta/', {usrID: usuario.id, nombre_factura: factName, nit: valNit, precio_total: valPrecioTotal, producto: lstProductos, direccionEntrega: valDireccion, latitud: valLat, longitud: valLong}, 
+                {headers: {
+                        'Content-Type': 'application/json',
+                        'Authorization': 'Bearer ' + localStorage.getItem('headers')
+                }})
+                .then(response => {
+                    if (response.status == 401) {
+                        axios.post('http://127.0.0.1:8000/api/token/refresh/', { refresh: localStorage.getItem('refresh')})
+                        .then(response => {
+                            if(response.status == 401){
+                                Swal.fire({
+                                type: 'warning',
+                                title: 'Ooops..',
+                                text: 'Hubo un problema al obtener el nuevo toke, redirigiendo al login...',
+                                showConfirmButton: false,
+                                timer: 2000
+                                }).then(function () {
+                                    localStorage.removeItem('usrSession');
+                                    localStorage.removeItem('refresh');
+                                    localStorage.removeItem('headers');
+                                    window.location = "login.html";
+                                })
+                            }
+                            localStorage.setItem('refresh', response.data.refresh);
+                            localStorage.setItem('headers', response.data.access);
+                            axios.post('http://127.0.0.1:8000/outime/venta/crear_venta/', {usrID: usuario.id, nombre_factura: factName, nit: valNit, precio_total: valPrecioTotal, 'producto[]': lstProductos, direccionEntrega: valDireccion, latitud: valLat, longitud: valLong}, 
+                            {headers: {
+                                    'Content-Type': 'application/json',
+                                    'Authorization': 'Bearer ' + localStorage.getItem('headers')
+                            }}).then(response2 => {
+                                Swal.fire({
+                                type: 'success',
+                                title: 'Felicidades',
+                                text: 'Acabas de realizar una compra, redirigiendo al inicio...',
+                                showConfirmButton: false,
+                                timer: 2000
+                                }).then(function () {
+                                    localStorage.removeItem('productos');
+                                    window.location = "index.html";
+                                })
+                            })
+                        })
+                    } else {
+                        Swal.fire({
+                        type: 'success',
+                        title: 'Felicidades',
+                        text: 'Acabas de realizar una compra, redirigiendo al inicio...',
+                        showConfirmButton: false,
+                        timer: 2000
+                        }).then(function () {
+                            localStorage.removeItem('productos');
+                            window.location = "index.html";
+                        })
+                    }
+                })
+            }
+        }
+        })
+    </script>
+</body>
+
+</html>
